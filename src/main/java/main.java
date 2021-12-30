@@ -1,9 +1,5 @@
-import DB.Mongo.MongoConnection;
 import Toolbox.csv_Methodes.CsvConverter;
 import Toolbox.json_Methodes.JsonConverter;
-
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoCollection;
 import java.util.List;
 import java.util.Map;
 import org.bson.Document;
@@ -26,7 +22,8 @@ public class main {
 
     Document bsonFile = JsonConverter.jsonToBson(jsonObject1);
 
-    MongoCollection col = MongoConnection.getCollectionFromDatabase("uat", "ffa");
-    col.insertOne(bsonFile);
+//    MongoCollection col = MongoConnection.getCollectionFromDatabase("uat", "ffa");
+//    col.insertOne(bsonFile);
+
   }
 }
