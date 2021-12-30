@@ -1,3 +1,5 @@
+package exampleMain;
+
 import DB.Mongo.MongoConnection;
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
