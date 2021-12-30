@@ -1,7 +1,7 @@
 package Toolbox.print;
 
 import static Toolbox.arrayConverter.ArrayList.arrayListTo2dArray;
-import static Toolbox.csv_Methodes.CsvConverter.csvToStringArrayList;
+import static Toolbox.csvMethodes.CsvConverter.csvToStringArrayList;
 
 import java.util.List;
 import java.util.Map;

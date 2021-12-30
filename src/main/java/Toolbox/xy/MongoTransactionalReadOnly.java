@@ -1,4 +1,4 @@
-package Toolbox;
+package Toolbox.xy;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;

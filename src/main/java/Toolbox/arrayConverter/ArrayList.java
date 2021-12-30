@@ -1,6 +1,6 @@
 package Toolbox.arrayConverter;
 
-import static Toolbox.csv_Methodes.CsvConverter.adjustCsvStringList;
+import static Toolbox.csvMethodes.CsvConverter.adjustCsvStringList;
 
 import java.util.Arrays;
 import java.util.List;

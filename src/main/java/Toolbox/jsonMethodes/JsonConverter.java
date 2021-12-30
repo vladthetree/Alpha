@@ -1,4 +1,4 @@
-package Toolbox.json_Methodes;
+package Toolbox.jsonMethodes;
 
 import org.bson.Document;
 import org.json.simple.JSONObject;
