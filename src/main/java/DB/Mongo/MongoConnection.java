@@ -11,17 +11,24 @@ public class MongoConnection {
       "mongodb+srv://Vladthetree:50account@cluster0.9fdym.mongodb.net/test?authSource=admin&replicaSet=atlas-frts2s-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
 
   public static MongoClient connectToMongo() {
-    return MongoClients.create(connectionUri);
+    MongoClient mongoClient = null;
+    try {
+      mongoClient = MongoClients.create(connectionUri);
+    } catch (Exception e) {
+      System.out.println("MongoConnection -> connectToMongo() - Connection failed. " + e);
+    }
+    System.out.println("Connection to Mongo successful.");
+    return mongoClient;
   }
 
-
   public static MongoDatabase getDatabase(String nameOfDatabase) {
-    return connectToMongo().getDatabase(nameOfDatabase);
+    MongoDatabase database = connectToMongo().getDatabase(nameOfDatabase);
+    return database;
   }
 
   public static MongoCollection getCollectionFromDatabase(String nameOfDatabase,
       String nameOfCollection) {
-    System.out.println(getDatabase(nameOfDatabase));
+
     return getDatabase(nameOfDatabase).getCollection(nameOfCollection);
   }
 
