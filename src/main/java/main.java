@@ -1,9 +1,8 @@
 import DB.Mongo.MongoConnection;
+import DB.Mongo.service.BsonServiceImpl;
 import Toolbox.csv_Methodes.CsvConverter;
 import Toolbox.json_Methodes.JsonConverter;
-
 import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoCollection;
 import java.util.List;
 import java.util.Map;
 import org.bson.Document;
@@ -13,6 +12,8 @@ public class main {
 
 
   public static void main(String[] args) {
+
+    BsonServiceImpl bsonService;
 
     String path = "C://Users//vlady//Documents//TestFiles//A//TextCSV.csv";
 
@@ -25,8 +26,8 @@ public class main {
     jsonObject1.put("map", stringStringMap); // TODO DAS ALS METHODE UMSETZEN
 
     Document bsonFile = JsonConverter.jsonToBson(jsonObject1);
+    MongoClient mongoClient = MongoConnection.connectToMongo();
 
-    MongoCollection col = MongoConnection.getCollectionFromDatabase("uat", "ffa");
-    col.insertOne(bsonFile);
+
   }
 }

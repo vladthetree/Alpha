@@ -1,9 +1,11 @@
 package DB.Mongo;
 
+import com.mongodb.DBObject;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 
 public class MongoConnection {
 
@@ -14,6 +16,7 @@ public class MongoConnection {
     MongoClient mongoClient = null;
     try {
       mongoClient = MongoClients.create(connectionUri);
+      MongoDatabase uat = mongoClient.getDatabase("uat");
     } catch (Exception e) {
       System.out.println("MongoConnection -> connectToMongo() - Connection failed. " + e);
     }
@@ -28,9 +31,11 @@ public class MongoConnection {
 
   public static MongoCollection getCollectionFromDatabase(String nameOfDatabase,
       String nameOfCollection) {
-
     return getDatabase(nameOfDatabase).getCollection(nameOfCollection);
   }
 
 
 }
+
+
+
