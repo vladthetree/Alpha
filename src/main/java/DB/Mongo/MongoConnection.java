@@ -14,12 +14,14 @@ public class MongoConnection {
     return MongoClients.create(connectionUri);
   }
 
+
   public static MongoDatabase getDatabase(String nameOfDatabase) {
     return connectToMongo().getDatabase(nameOfDatabase);
   }
 
   public static MongoCollection getCollectionFromDatabase(String nameOfDatabase,
       String nameOfCollection) {
+    System.out.println(getDatabase(nameOfDatabase));
     return getDatabase(nameOfDatabase).getCollection(nameOfCollection);
   }
 
