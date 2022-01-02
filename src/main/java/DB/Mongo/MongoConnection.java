@@ -13,7 +13,9 @@ import org.json.simple.JSONObject;
 public class MongoConnection {
 
   private static final String connectionUri =
-      "mongodb+srv://Vladthetree:50account@cluster0.9fdym.mongodb.net/test?authSource=admin&replicaSet=atlas-frts2s-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
+      "mongodb+srv://Vladthetree:50account@cluster0.9fdym.mongodb.net/"
+          + "test?authSource=admin&replicaSet=atlas-frts2s-shard-0&readPreference=primary&appname="
+            + "MongoDB%20Compass&ssl=true";
 
   public static MongoClient connectToMongo() {
     MongoClient mongoClient = null;
@@ -37,13 +39,13 @@ public class MongoConnection {
     return getDatabase(nameOfDatabase).getCollection(nameOfCollection);
   }
 
-  public static Document insertBsonObject(BsonObject bsonObject){
+  public static Document insertBsonObject(BsonObject bsonObject) {
     JSONObject jsonObject = new JSONObject();
     String fsName = bsonObject.getFsName();
     String internalNickname = bsonObject.getInternalNickname();
-    jsonObject.put("name",fsName);
-    jsonObject.put("internalNickname",internalNickname);
-    jsonObject.put("bson",bsonObject.getBsonfile());
+    jsonObject.put("name", fsName);
+    jsonObject.put("internalNickname", internalNickname);
+    jsonObject.put("bson", bsonObject.getBsonfile());
 
     return jsonToBson(jsonObject);
   }

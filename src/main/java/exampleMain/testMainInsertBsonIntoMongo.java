@@ -2,7 +2,9 @@ package exampleMain;
 
 import DB.Mongo.MongoConnection;
 import com.mongodb.client.MongoCollection;
+import java.util.ArrayList;
 import org.bson.Document;
+import org.json.simple.JSONObject;
 
 public class testMainInsertBsonIntoMongo {
 
@@ -24,19 +26,24 @@ public class testMainInsertBsonIntoMongo {
     generation of Bson Documents
      */
 
-//    Document doc = new Document("id", 1);
-//    doc.put("keyName", "valueName");
+    Document doc = new Document("id", 1);
+    doc.put("keyName", "valueName");
 //    ArrayList<Document> scores = new ArrayList<>();
 //    for (int i = 0; i < 10; i++) {
 //      scores.add(new Document("score", 90 + i).append("type", "exam_" + i));
 //    }
+    JSONObject jsonObject = new JSONObject();
+    for(int i = 0; i<10; i++){
+      jsonObject.put("key_"+i,"value_"+i);
+    }
+
 //    Document doc2 = new Document("id", 2);
 //    doc.put("keyName", "valueName2");
 //    for(int i = 0; i<10;i++){
 //      doc2.put("spezialKeyName_"+(i+1),"spezialValueName_"+(i+1));
 //    }
-//    doc.append("scores", scores);
-//    col.insertOne(doc);
+    doc.append("scores", jsonObject);
+    col.insertOne(doc);
 //    col.insertOne(doc2);
     //-------------------------------------------------------------------------------------------
 
