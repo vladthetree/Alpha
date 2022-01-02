@@ -1,4 +1,4 @@
-package Toolbox.json_Methodes;
+package Toolbox.jsonMethodes;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

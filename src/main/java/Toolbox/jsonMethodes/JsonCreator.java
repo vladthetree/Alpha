@@ -1,4 +1,4 @@
-package Toolbox.json_Methodes;
+package Toolbox.jsonMethodes;
 
 import java.util.Map;
 import org.json.simple.JSONObject;

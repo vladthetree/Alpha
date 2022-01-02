@@ -1,4 +1,4 @@
-package Toolbox.csv_Methodes;
+package Toolbox.csvMethodes;
 
 import static Toolbox.arrayConverter.ArrayList.arrayListTo2dArray;
 
